@@ -80,34 +80,46 @@ export const ERC721Minter = ({ bunzz, userAddress }) => {
 
   return (
     <div className="wrapper">
-      <p className="title">
-        Step1: Mint your NFT with IPFS
+      <h1 className="title">STEP 1</h1>
+      <p className="description">
+        Mint your NFT with IPFS
       </p>
       <input
+        className="input"
         placeholder="Token Name"
         value={name}
         onChange={(e) => setName(e.target.value)}
         type="text"
       />
       <input
+        className="input"
         placeholder="Description"
         value={description}
         onChange={(e) => setDescription(e.target.value)}
         type="text"
       />
-      <input type="file" accept="image/*" onChange={select} />
-      {base64 ? (
-          <img src={base64} alt="hoge" className="image" />
-      ) : (
-        <></>
-      )}
+      <div>
+        <div className="input-file-container">
+          <p className="input-file-text">Add file</p>
+          <input className="input-file-button" type="file" accept="image/*" onChange={select} />
+        </div>
+        
+        <div>
+            {base64 ? (
+              <div className="image-container"><img src={base64} alt="hoge" /></div>
+            ) : (
+            <></>
+            )}
+          
+        </div>
+      </div>
       {onGoing ? (
         <div className="center">
           Loading...
         </div>
       ) : (
-        <button onClick={submit}>
-          mint
+        <button className="button-mint" onClick={submit}>
+          MINT
         </button>
       )}
       {tokenId ? <p>token ID: {tokenId}</p> : <></>}

@@ -27,9 +27,11 @@ export const ERC721Checker = ({ bunzz, userAddress }) => {
 
   return (
     <div className="wrapper">
-      <p className="title">Step2: Get your NFT</p>
+      <h1 className="title">STEP 2</h1>
+      <p className="description">Get your NFT</p>
       <input
-        placeholder="token ID"
+        className="input"
+        placeholder="Token ID"
         value={tokenId}
         onChange={(e) => setTokenId(e.target.value)}
         type="text"
@@ -37,11 +39,13 @@ export const ERC721Checker = ({ bunzz, userAddress }) => {
       {onGoing ? (
         <div className="center">Loading...</div>
       ) : (
-        <button onClick={submit}>get</button>
+        <button className="button-get" onClick={submit}>GET</button>
       )}
-      {name ? <p>Name: {name}</p> : <></>}
-      {description ? <p>Description: {description}</p> : <></>}
-      {image ? <img src={image} alt="image" className="image" /> : <></>}
+      
+      {image ? <div className="image-container"><img src={image} alt="image"/></div> : <></>}
+      {name ? <p className="nft-name">Name: {name}</p> : <></>}
+      {description ? <p className="nft-description">Description: {description}</p> : <></>}
+      
     </div>
   );
 };

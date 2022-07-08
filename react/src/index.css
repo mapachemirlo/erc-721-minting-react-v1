@@ -1,36 +1,200 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+*{
+  font-family: 'VT323', monospace, 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+}
+body {
+  margin: 0;  
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(90deg, #cba5a5 0,#d9efc4 58%);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/*Home - left column*/
+
+.home-container{
+  text-align: center;
 }
 
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  margin: 30px;
-  justify-content: space-evenly;
+.home-title{
+  text-align: center;
+  cursor: default;
+  margin-top: 15%;
+  color: #fff;
+  text-shadow: 0 0 4px black;
+  letter-spacing: 3px;
 }
 
-.title {
-  font-size: 20px;
-  margin-top: 20px;
+.home-description{
+  margin: 1%;
+  cursor: default;
+  font-size: 1.1rem;
 }
 
-.image {
-  width: 200px;
-  height: 200px;
+.social-media-link{
+  text-decoration: none;
 }
+.social-media-icon-linkedin{
+  width: 20px;
+}
+.social-media-icon-github{
+  width: 23px;
+}
+
+@media screen and (min-width: 768px) {
+  .main-container{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    width: 100%;
+  }
+  .home-container{
+    width: 50%;
+    position: sticky;
+    top: 40%;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .home-container{
+    top: 30%;
+  }
+}
+
+/*Root - right column*/
 
 .center {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background: rgba(255, 255, 255, .4);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  padding: 1rem 1.4rem;
+  margin: 15% 0;
+  width: 212px;
+}
+
+.title {
+  font-size: 2rem;
+  text-align: center;
+  margin: 10% 0 0;
+  color: #1b1b1b;
+  cursor: default;
+  letter-spacing: 2px;
+}
+.description{
+  font-size: 1.4rem;
+  text-align: center;
+  color: #1b1b1b;
+  cursor: default;
+}
+
+.input{
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #1b1b1b;
+  margin: 5% 0 7%;
+  font-size: 1.1rem;
+}
+
+.input-file-container{
+position: relative;
+padding: 0.4rem;
+margin: 5% 0 7%;
+background-color: transparent;
+border: 1px solid #1b1b1b;  
+transition: all 300ms;
+cursor: pointer;
+}
+
+.input-file-container:hover{
+background-color: #d9efc4;
+}
+
+.input-file-text{
+  text-align: center;
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: 2px;
+  font-size: 1.1rem;
+}
+.input-file-text::before{
+  content: "+ ";
+}
+.input-file-button{
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+width: 100%;
+height: 100%;
+opacity: 0;
+cursor: pointer;
+}
+
+.image-container{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 5% 0;
+}
+img{
+  width: 200px;
+}
+
+.button-mint, .button-get{
+  padding: 0.5rem;
+  margin: 5% 0;
+  background-color: #1b1b1b;
+  box-shadow: 5px 5px 0 #cca8a638, -5px -5px 0 #b5caa1;
+  transition: all 300ms;
+  border: none;
+  font-size: 1.3rem;
+  color: #fff;
+  cursor: pointer;
+  letter-spacing: 3px;
+}
+
+.button-mint:active, .button-get:active{
+  background-color: #fff;
+  box-shadow: inset 5px 5px 0 #d9efc4,
+              inset -5px -5px 0 #cca9a7;
+  color: #1b1b1b;
+}
+
+.nft-name{
+  margin-bottom: 0;
+  cursor: default;
+}
+.nft-description{
+  cursor: default;
+}
+
+@media screen and (min-width: 768px) {
+  .wrapper{
+    width: 300px;
+    margin: 10% 0;
+  }
+  #root{
+    width: 50%
+  }
+  img{
+    width: 300px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .wrapper{
+    margin: 5% 0;
+  }
 }
